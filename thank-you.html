@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شكراً لشرائك! | مكتبة رفوف ميرلين</title>
+  <style>
+    /* الأنماط الأساسية */
+    body {
+      font-family: 'Tajawal', Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    
+    .news-ticker {
+      background: linear-gradient(to right, #ff8a00, #da1b60);
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    
+    .download-section {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      margin: 30px 0;
+    }
+    
+    .cta-button {
+      background: #2ecc71;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin: 20px 0;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+    
+    .cta-button:hover {
+      background: #27ae60;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="news-ticker">
+    <p>🎉 تمت عملية الشراء بنجاح! شكراً لثقتك بنا</p>
+  </div>
+  
+  <div class="container">
+    <div class="download-section">
+      <h1 style="color: #2ecc71;">✅ تم تأكيد طلبك بنجاح!</h1>
+      <p id="greeting-text" style="font-size: 20px;">نقدر ثقتك الغالية بمنتجاتنا</p>
+      
+      <a href="downloads/anti-procrastination-book.pdf" class="cta-button">
+        ⬇️ تنزيل الكتاب الآن
+      </a>
+      
+      <div style="margin-top: 30px; text-align: right; direction: rtl;">
+        <h3>تعليمات التنزيل:</h3>
+        <ol style="line-height: 2;">
+          <li>اضغط على زر التنزيل بالأعلى</li>
+          <li>اختر "حفظ الملف" إذا لم يبدأ التحميل تلقائياً</li>
+          <li>افتح الملف باستخدام برنامج Acrobat Reader</li>
+        </ol>
+      </div>
+    </div>
+    
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+      <p>لأي استفسارات أو مساعدة:</p>
+      <a href="https://wa.me/+213671226436" class="cta-button" style="background: #3498db;">
+        تواصل معنا عبر الواتساب
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // استخراج بيانات العميل من الرابط
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const name = urlParams.get('name');
+    
+    // تخصيص الرسالة إذا كان الاسم متوفراً
+    if(name) {
+      document.getElementById('greeting-text').textContent = `عزيزي ${name}، نقدر ثقتك الغالية بنا`;
+    }
+    
+    // تتبع عملية النقر على زر التنزيل
+    document.querySelector('.cta-button').addEventListener('click', function() {
+      console.log('تم النقر على زر التنزيل');
+    });
+  </script>
+</body>
+</html>
